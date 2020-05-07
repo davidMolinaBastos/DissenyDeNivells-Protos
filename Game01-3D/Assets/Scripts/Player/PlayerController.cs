@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     PlayerStats PS;
     CharacterController CC;
+
+    public GameController GC;
+
     [HideInInspector] public int InmunityItems = 0;
     public Transform PitchController;
     public bool InvertedYaw = false;
@@ -91,7 +94,7 @@ public class PlayerController : MonoBehaviour
             InmunityCT = PS.InmunityTime;
         }
 
-        if (ActionControlls.ReloadPressed())
+        if (ActionControlls.ReloadPressed() && (mag1 < weapon1.MagazineSize || mag2 < weapon2.MagazineSize ))
             Reload();
 
         //Move The Character
@@ -150,7 +153,19 @@ public class PlayerController : MonoBehaviour
     }
     void Reload()
     {
-
+        if(mag1 == weapon1.MagazineSize)
+        {
+            int diference1 = weapon1.MagazineSize - mag1;
+            ammo1 -= diference1;
+            mag1 = weapon1.MagazineSize;
+        }
+        if (mag2 == weapon2.MagazineSize)
+        {
+            int diference2 = weapon2.MagazineSize - mag2;
+            ammo2 -= diference2;
+            mag2 = weapon2.MagazineSize;
+        }
+        GC.UpdateUI();
     }
 
     //Items
@@ -169,6 +184,7 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(ammo2, 0, weapon2.MaxAmmo);
             used = true;
         }
+        GC.UpdateUI();
         return used;
     }
 
@@ -181,6 +197,7 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(HP, 0, PS.MaxLife);
             used = true;
         }
+        GC.UpdateUI();
         return used;
     }
 
@@ -193,11 +210,13 @@ public class PlayerController : MonoBehaviour
             Mathf.Clamp(Shield, 0, PS.MaxShield);
             used = true;
         }
+        GC.UpdateUI();
         return used;
     }
     public void AddInmunityItem(int value)
     {
         InmunityItems += value;
+        GC.UpdateUI();
     }
     public void Damage(int value)
     {
@@ -218,12 +237,40 @@ public class PlayerController : MonoBehaviour
                 HP -= value;
         if (HP <= 0)
         {
-
-            //Gameover;
+            GC.GameOver();
         }
+        GC.UpdateUI();
     }
     public bool Inmune()
     {
         return InmunityCT > 0f;
+    }
+    public int GetHP()
+    {
+        return HP;
+    }
+    public int GetShield()
+    {
+        return Shield;
+    }
+    public int GetMag1()
+    {
+        return mag1;
+    }
+    public int GetMag2()
+    {
+        return mag2;
+    }
+    public int GetAmmo1()
+    {
+        return ammo1;
+    }
+    public int GetAmmo2()
+    {
+        return ammo2;
+    }
+    public int GetInmunityItems()
+    {
+        return InmunityItems;
     }
 }
