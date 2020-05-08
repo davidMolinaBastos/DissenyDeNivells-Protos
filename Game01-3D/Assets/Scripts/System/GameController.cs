@@ -6,17 +6,8 @@ public class GameController : MonoBehaviour
 {
     int score = 0;
     int plants = 0;
-
+    List<int> keyIDs = new List<int>();
     public int plantsToWin = 5;
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        
-    }
     public void GameOver()
     {
 
@@ -41,5 +32,16 @@ public class GameController : MonoBehaviour
         score += value;
         Mathf.Clamp(score, 0, score);
         UpdateUI();
+    }
+    public void AddKey(int id)
+    {
+        keyIDs.Add(id);
+    }
+    public bool CheckKey(int id)
+    {
+        foreach (int i in keyIDs)
+            if (i == id)
+                return true;
+        return false;
     }
 }

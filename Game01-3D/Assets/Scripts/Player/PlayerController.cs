@@ -187,7 +187,6 @@ public class PlayerController : MonoBehaviour
         GC.UpdateUI();
         return used;
     }
-
     public bool RestoreHP(int value)
     {
         bool used = false;
