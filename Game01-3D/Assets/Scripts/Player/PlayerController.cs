@@ -153,13 +153,13 @@ public class PlayerController : MonoBehaviour
     }
     void Reload()
     {
-        if(mag1 == weapon1.MagazineSize)
+        if(mag1 < weapon1.MagazineSize)
         {
             int diference1 = weapon1.MagazineSize - mag1;
             ammo1 -= diference1;
             mag1 = weapon1.MagazineSize;
         }
-        if (mag2 == weapon2.MagazineSize)
+        if (mag2 < weapon2.MagazineSize)
         {
             int diference2 = weapon2.MagazineSize - mag2;
             ammo2 -= diference2;
@@ -235,9 +235,8 @@ public class PlayerController : MonoBehaviour
             else
                 HP -= value;
         if (HP <= 0)
-        {
             GC.GameOver();
-        }
+        
         GC.UpdateUI();
     }
     public bool Inmune()

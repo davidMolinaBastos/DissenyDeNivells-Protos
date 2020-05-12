@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyScript : MonoBehaviour
+public class DeathZones : MonoBehaviour
 {
-    public int keyID;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().CheckKey(keyID);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
     }
 }

@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class BaseCollect : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            Effect(collision.gameObject);
-        }
-    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
