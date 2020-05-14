@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 6041932511289158942}
   - component: {fileID: 6041932511292058942}
   - component: {fileID: 6041932511291060222}
+  - component: {fileID: -697508725666098339}
+  - component: {fileID: -5551608294828417504}
   m_Layer: 0
-  m_Name: BrownMushroom_WeirdPlant
+  m_Name: WeirdPlant1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,3 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-697508725666098339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041932511288865086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3c945d8ed9ed24a92f024a1f1f9f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+--- !u!65 &-5551608294828417504
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041932511288865086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33945787, y: 0.41441342, z: 0.5055427}
+  m_Center: {x: -0.013732351, y: 0.18724288, z: 0.021015398}

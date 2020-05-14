@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 7414845565173319729}
   - component: {fileID: 7414845565176711185}
   - component: {fileID: 7414845565175614161}
+  - component: {fileID: 263483541236789571}
+  - component: {fileID: 3367365053864138946}
   m_Layer: 0
-  m_Name: Box
+  m_Name: Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,3 +81,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &263483541236789571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414845565173683217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7eabc7d6660c94a9141ce532769491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 100
+  weapon1: 1
+--- !u!65 &3367365053864138946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414845565173683217}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5905007, y: 1.5, z: 1.5905007}
+  m_Center: {x: 0, y: 0.75, z: 0}

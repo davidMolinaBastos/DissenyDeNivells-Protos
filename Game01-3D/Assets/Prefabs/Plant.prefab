@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7138269166309000335}
   - component: {fileID: 7138269166307928001}
   m_Layer: 0
-  m_Name: Weeds_01 (3)
+  m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
