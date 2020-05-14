@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6733129396420344026}
   - component: {fileID: 6733129396420344029}
   - component: {fileID: 6733129396420344028}
+  - component: {fileID: 4114737948479646738}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -115,6 +116,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6733129396420344031}
   m_Enabled: 1
+--- !u!114 &4114737948479646738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6733129396420344031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c3912572c93444e907f83e877eae43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 6733129396420344026}
+  shakeDuration: 0
+  shakeAmount: 0.1
+  decreaseFactor: 1
 --- !u!1 &6733129396814761750
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GC: {fileID: 0}
+  CS: {fileID: 4114737948479646738}
   InmunityItems: 0
   PitchController: {fileID: 6733129396353570504}
   InvertedYaw: 0
@@ -285,6 +303,7 @@ MonoBehaviour:
     m_Bits: 256
   weapon1: {fileID: 11400000, guid: d2a2f0c8b20e706458226c50e9bb71cc, type: 2}
   weapon2: {fileID: 11400000, guid: 349136a2de9bb244ebaac5102b756727, type: 2}
+  CameraShakeDuration: 1
 --- !u!114 &6733129396831086782
 MonoBehaviour:
   m_ObjectHideFlags: 0

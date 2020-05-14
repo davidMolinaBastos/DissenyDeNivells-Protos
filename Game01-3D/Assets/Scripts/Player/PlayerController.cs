@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     CharacterController CC;
 
     public GameController GC;
+    public CameraShake CS;
 
     [HideInInspector] public int InmunityItems = 0;
     public Transform PitchController;
@@ -25,7 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool InvertedPitch = true;
     public LayerMask ShootLayerMask;
     public WeaponObject weapon1, weapon2;
-
+    public float CameraShakeDuration = 1;
 
     void Awake()
     {
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
         PS = GetComponent<PlayerStats>();
         CC = GetComponent<CharacterController>();
-
+        GC = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         mag1 = weapon1.MagazineSize;
         ammo1 = weapon1.MaxAmmo;
         mag2 = weapon2.MagazineSize;
@@ -131,6 +132,8 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
+        GC.UpdateUI();
+        ShakeCameraStart();
     }
     void AltShoot()
     {
@@ -146,6 +149,8 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
+        GC.UpdateUI();
+        ShakeCameraStart();
     }
     bool CanShoot()
     {
@@ -239,6 +244,14 @@ public class PlayerController : MonoBehaviour
         
         GC.UpdateUI();
     }
+
+    public void ShakeCameraStart()
+    {
+        CS.enabled = true;
+        CS.shakeDuration = CameraShakeDuration;
+    }
+
+
     public bool Inmune()
     {
         return InmunityCT > 0f;
