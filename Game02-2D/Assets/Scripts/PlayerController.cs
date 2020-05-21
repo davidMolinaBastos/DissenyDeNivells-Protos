@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     public float movementSpeed = 10f;
     public float jumpForce = 20f;
-    [Range(0,1)]public float airControl = 0.9f;
+    [Range(0, 1)] public float airControl = 0.9f;
     public float groundDetectRadious = 0.5f;
 
     [Header("KeyCodes")]
@@ -22,10 +22,10 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         Camera.main.GetComponent<Transform>().position = new Vector3(transform.position.x, transform.position.y, -10);
-        if (Input.GetKeyDown(jumpKeyCode))
+        if (onGround && Input.GetKeyDown(jumpKeyCode))
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        if (Physics2D.OverlapCircle(transform.position, groundDetectRadious))
-            onGround = true;
+
+        onGround = Physics2D.OverlapCircle(transform.position, groundDetectRadious);
     }
     private void FixedUpdate()
     {
