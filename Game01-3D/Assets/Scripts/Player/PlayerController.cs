@@ -179,13 +179,14 @@ public class PlayerController : MonoBehaviour
     public bool ChangeAmmo(int value, bool mainW)
     {
         bool used = false;
-        if (mainW && ammo1 < weapon1.MaxAmmo)
-        {
-            ammo1 += value;
-            Mathf.Clamp(ammo1, 0, weapon1.MaxAmmo);
-            used = true;
-        }
-        else if(!mainW && ammo2 < weapon2.MaxAmmo)
+        if (mainW)
+            if(ammo1 + mag1 < weapon1.MaxAmmo + weapon2.MagazineSize)
+            {
+                ammo1 += value;
+                Mathf.Clamp(ammo1, 0, weapon1.MaxAmmo);
+                used = true;
+            }
+        else if(ammo2 + mag2< weapon2.MaxAmmo + weapon2.MagazineSize)
         {
             ammo2 += value;
             Mathf.Clamp(ammo2, 0, weapon2.MaxAmmo);
@@ -206,7 +207,6 @@ public class PlayerController : MonoBehaviour
         GC.UpdateUI();
         return used;
     }
-
     public bool RestoreShield(int value)
     {
         bool used = false;
@@ -246,14 +246,12 @@ public class PlayerController : MonoBehaviour
         
         GC.UpdateUI();
     }
-
     public void ShakeCameraStart()
     {
         CS.enabled = true;
         CS.shakeDuration = CameraShakeDuration;
     }
-
-
+    
     public bool Inmune()
     {
         return InmunityCT > 0f;
