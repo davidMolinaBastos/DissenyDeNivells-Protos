@@ -280,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 29750072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotativePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2451,6 +2451,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotativePlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 3074428874321111113, guid: bfc1162e15db34f41bdfbde31fe14fd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7878868694472788109, guid: bfc1162e15db34f41bdfbde31fe14fd7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4107,7 +4112,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -5311,6 +5316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotativePlatform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3074428874321111113, guid: bfc1162e15db34f41bdfbde31fe14fd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7878868694472788109, guid: bfc1162e15db34f41bdfbde31fe14fd7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5774,7 +5784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710222208}
   - component: {fileID: 710222207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6122,7 +6132,7 @@ GameObject:
   - component: {fileID: 771874918}
   - component: {fileID: 771874920}
   - component: {fileID: 771874919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TilemapRobot_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39054,7 +39064,7 @@ GameObject:
   - component: {fileID: 928271552}
   - component: {fileID: 928271554}
   - component: {fileID: 928271553}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TilemapIndustrail_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42735,7 +42745,7 @@ GameObject:
   - component: {fileID: 1100024862}
   - component: {fileID: 1100024864}
   - component: {fileID: 1100024863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TilemapRobot_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80533,7 +80543,7 @@ GameObject:
   - component: {fileID: 1545717599}
   - component: {fileID: 1545717601}
   - component: {fileID: 1545717600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TilemapIndustrial_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85487,7 +85497,7 @@ GameObject:
   - component: {fileID: 1741927982}
   - component: {fileID: 1741927985}
   - component: {fileID: 1741927986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85506,10 +85516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9de332f2fa091948a86e9ab43921e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  jumpForce: 12
-  airControl: 1
-  groundDetectRadious: 0.5
+  movementSpeed: 15
+  maxSpeed: 15
+  jumpForce: 6
+  airControl: 0.51
   jumpKeyCode: 32
 --- !u!212 &1741927983
 SpriteRenderer:
@@ -85570,7 +85580,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741927981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5353785, y: 3.6154013, z: 0}
+  m_LocalPosition: {x: -5.5353785, y: 3.64, z: 0}
   m_LocalScale: {x: 8.2459, y: 8.2459, z: 8.2459}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86169,6 +86179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RotativePlatform (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074428874321111113, guid: bfc1162e15db34f41bdfbde31fe14fd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7878868694472788109, guid: bfc1162e15db34f41bdfbde31fe14fd7,
         type: 3}
@@ -88014,6 +88029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RotativePlatform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074428874321111113, guid: bfc1162e15db34f41bdfbde31fe14fd7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7878868694472788109, guid: bfc1162e15db34f41bdfbde31fe14fd7,
         type: 3}
