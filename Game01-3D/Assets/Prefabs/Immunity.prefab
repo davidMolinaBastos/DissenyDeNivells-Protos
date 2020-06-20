@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7074627758796559331}
   - component: {fileID: 8705607184235651040}
+  - component: {fileID: 9177566488939772872}
   m_Layer: 0
   m_Name: Immunity
   m_TagString: Untagged
@@ -46,6 +47,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9177566488939772872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7074627758796066755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dacc92148513b946b80f831acf7537b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
 --- !u!1 &7074627758796066763
 GameObject:
   m_ObjectHideFlags: 0

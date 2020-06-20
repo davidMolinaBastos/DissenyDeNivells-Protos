@@ -130,7 +130,8 @@ public class PlayerController : MonoBehaviour
         {
             switch (RaycastHit.collider.gameObject.tag)
             {
-                default:
+                case "Drone":
+                    RaycastHit.collider.gameObject.GetComponent<EnemyController>().Damage((int)weapon1.Damage);
                     break;
             }
         }
@@ -147,7 +148,8 @@ public class PlayerController : MonoBehaviour
         {
             switch (RaycastHit.collider.gameObject.tag)
             {
-                default:
+                case "Drone":
+                    RaycastHit.collider.gameObject.GetComponent<EnemyController>().Damage((int)weapon2.Damage);
                     break;
             }
         }
