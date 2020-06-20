@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -629458836951141426}
   - component: {fileID: 1522967239392709891}
   - component: {fileID: 8504134812644064961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drone
   m_TagString: Drone
   m_Icon: {fileID: 0}
@@ -96,10 +96,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NavMeshAgent: {fileID: 1522967239392709891}
   patrolPoints: []
+  player: {fileID: 0}
   drop: {fileID: 0}
-  DistToAtack: 5
-  DistToDetect: 15
-  attackCooldown: 1
+  DistToAtack: 50
+  DistToDetect: 150
+  attackCooldown: 5
   timeToDie: 1
   damage: 50
   MaxHp: 100

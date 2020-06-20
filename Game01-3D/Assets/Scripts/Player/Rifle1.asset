@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d550b6cf0712748a5a0cb29dcc39be, type: 3}
   m_Name: Rifle1
   m_EditorClassIdentifier: 
-  Cadenece: 0
-  Damage: 0
+  Cadenece: 0.2
+  Damage: 50
   MagazineSize: 30
   MaxAmmo: 300

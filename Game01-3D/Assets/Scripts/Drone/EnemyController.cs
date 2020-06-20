@@ -12,12 +12,12 @@ public class EnemyController : MonoBehaviour
     public Transform[] patrolPoints;
     int patrolPosID;
 
-    Transform player;
+    public Transform player;
     public GameObject drop;
     [Header("Stats")]
-    public float DistToAtack = 5;
-    public float DistToDetect = 15;
-    public float attackCooldown = 1;
+    public float DistToAtack = 50;
+    public float DistToDetect = 150;
+    public float attackCooldown = 5;
     public float timeToDie = 1;
     public float damage = 50;
     public float MaxHp = 100;
@@ -28,7 +28,6 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        ChangeState(TState.Patrol);
     }
 
     void Update()
@@ -43,17 +42,17 @@ public class EnemyController : MonoBehaviour
         switch (state)
         {
             case TState.Patrol:
-                if (Vector3.Distance(player.position, transform.position) < DistToDetect)
+                if (Vector3.Distance(player.position, transform.position) < DistToDetect && time > 0.5f)
                     ChangeState(TState.GoTo);
                 break;
             case TState.GoTo:
-                if (Vector3.Distance(player.position, transform.position) < DistToAtack)
+                if (Vector3.Distance(player.position, transform.position) < DistToAtack && time > 0.5f)
                     ChangeState(TState.Atack);
-                else if (Vector3.Distance(player.position, transform.position) < DistToDetect)
+                else if (Vector3.Distance(player.position, transform.position) < DistToDetect && time > 0.5f)
                     ChangeState(TState.Patrol);
                 break;
             case TState.Atack:
-                if (Vector3.Distance(player.position, transform.position) > DistToAtack)
+                if (Vector3.Distance(player.position, transform.position) > DistToAtack && time > 0.5f)
                     ChangeState(TState.GoTo);
                 break;
         }
@@ -114,6 +113,7 @@ public class EnemyController : MonoBehaviour
                     player.GetComponent<PlayerController>().Damage((int)damage);
                     time = 0;
                 }
+                transform.LookAt(Vector3.Lerp(transform.forward, player.position, Time.deltaTime));
                 break;
             case TState.Die:
                 if (time <= timeToDie)
@@ -152,7 +152,9 @@ public class EnemyController : MonoBehaviour
 
     public void Damage(int damage)
     {
+        print(HP + "Damage:" + damage);
         HP -= damage;
+        print(HP);
         if (HP <= 0)
             ChangeState(TState.Die);
     }

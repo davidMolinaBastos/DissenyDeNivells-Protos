@@ -9349,7 +9349,7 @@ PrefabInstance:
     - target: {fileID: 732518171070779404, guid: 775af00b49501934d92adb56fe932b48,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 732518171070779404, guid: 775af00b49501934d92adb56fe932b48,
         type: 3}
@@ -10262,7 +10262,7 @@ GameObject:
   - component: {fileID: 1810969316}
   - component: {fileID: 1810969315}
   - component: {fileID: 1810969314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

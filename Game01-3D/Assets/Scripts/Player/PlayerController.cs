@@ -122,8 +122,6 @@ public class PlayerController : MonoBehaviour
     {
         mag1--;
         Ray CameraRay = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        
-
 
         RaycastHit RaycastHit;
         if (Physics.Raycast(CameraRay, out RaycastHit, 200, ShootLayerMask.value))
@@ -286,4 +284,5 @@ public class PlayerController : MonoBehaviour
     {
         return InmunityItems;
     }
+    
 }
