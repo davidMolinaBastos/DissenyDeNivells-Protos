@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     public Text HPtext;
     public PlayerController pc;
+    public Text InmunityText;
 
     float width;
     private void Start()
@@ -21,5 +22,13 @@ public class GameController : MonoBehaviour
     public void UpdateGUI()
     {
         HPtext.text = "HP: " + pc.GetHP();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            pc.InmunityToggle();
+            InmunityText.text = "(Debug) - E ToggleInmunity: " + pc.GetInmunity();
+        }
     }
 }

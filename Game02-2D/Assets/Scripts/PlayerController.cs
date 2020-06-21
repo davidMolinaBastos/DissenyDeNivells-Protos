@@ -23,9 +23,11 @@ public class PlayerController : MonoBehaviour
     float HP = 100f;
     float attackCT = 0;
     bool onGround = false;
+    bool inmunity = false;
     private void Start()
     {
         print(jumpForce);
+        jumpForce = 10;
         rb = GetComponent<Rigidbody2D>();
     }
     public void Update()
@@ -95,9 +97,13 @@ public class PlayerController : MonoBehaviour
 
     public void Damage(float damage)
     {
+        if (inmunity)
+            return;
         HP -= damage;
         if (HP >= 0)
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
     }
     public float GetHP(){return HP;}
+    public void InmunityToggle(){ inmunity = !inmunity;}
+    public bool GetInmunity() { return inmunity; }
 }
