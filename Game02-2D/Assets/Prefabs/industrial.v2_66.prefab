@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7878868694472788109}
   - component: {fileID: 1958380085697756163}
   - component: {fileID: 2330373527122931300}
+  - component: {fileID: 1897333048284859793}
   m_Layer: 0
   m_Name: industrial.v2_66
   m_TagString: Untagged
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36, y: 0.36}
   m_EdgeRadius: 0
+--- !u!114 &1897333048284859793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074428874321111113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ee0e4bebba34349bc5d803a13958fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 90

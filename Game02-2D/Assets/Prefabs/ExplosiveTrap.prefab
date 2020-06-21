@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2174706650113475861}
   - component: {fileID: 5175903261703026668}
   - component: {fileID: 8221639074936925874}
+  - component: {fileID: -525811648807278962}
   m_Layer: 0
   m_Name: ExplosiveTrap
   m_TagString: Untagged
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &-525811648807278962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2760547051309415900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6cef94483f84c41b72f603620aa2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,56 +11,49 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed = 10f;
     public float jumpForce = 20f;
     [Range(0, 1)] public float airControl = 0.9f;
-    //public float groundDetectRadious = 0.5f;
+    public float attackTime = 1f;
+    public float maxLife = 100f;
 
     [Header("KeyCodes")]
     public KeyCode jumpKeyCode = KeyCode.Space;
+    public KeyCode attackKeyCode = KeyCode.Mouse0;
 
-    /*
-    [Header("References")]
-    public LayerMask player;
-    public LayerMask ground;*/
+    public BoxCollider2D sword;
+
+    float HP = 100f;
+    float attackCT = 0;
     bool onGround = false;
     private void Start()
     {
+        print(jumpForce);
         rb = GetComponent<Rigidbody2D>();
     }
     public void Update()
     {
+        if (attackCT > 0)
+            attackCT += Time.deltaTime;
+        else if (sword.enabled)
+            sword.enabled = false;
+
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
-        /*
-        if (onGround && Input.GetKeyDown(jumpKeyCode))
+
+        if (Input.GetKeyDown(attackKeyCode) && attackCT > 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            onGround = false;
+            sword.enabled = true;
+            attackCT = attackTime;
         }
-
-        float moveVelocity = rb.velocity.x;
-        if (Input.GetAxis("Horizontal") < 0)
-            moveVelocity = -movementSpeed;
-        else if (Input.GetAxis("Horizontal") > 0)
-            moveVelocity = movementSpeed;
-        else
-            moveVelocity = 0;
-        rb.velocity = new Vector2(moveVelocity, rb.velocity.y);
-
-        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, groundDetectRadious, ground.value);
-        for (int i = 0; i < col.Length; i++)
-            if (col[i])
-                onGround = true;
-        print(onGround);*/
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (CollisionValid(collision))
             onGround = true;
-        print(onGround);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         onGround = false;
-        print(onGround);
     }
+
     private bool CollisionValid(Collision2D col)
     {
         bool val = false;
@@ -72,6 +65,7 @@ public class PlayerController : MonoBehaviour
         }
         return val;
     }
+
     private void FixedUpdate()
     {
         float x_movement = Input.GetAxis("Horizontal");
@@ -92,11 +86,18 @@ public class PlayerController : MonoBehaviour
             float x = Mathf.Clamp(rb.velocity.x, -maxSpeed, maxSpeed);
             float y = Mathf.Clamp(rb.velocity.y, -maxSpeed, maxSpeed);
             rb.velocity = (new Vector2(x,y));
-            //rb.AddForce(Vector2.up * jumpForce);
         }
         if (rb.velocity.x < 0)
             GetComponent<SpriteRenderer>().flipX = true;
         else if(rb.velocity.x > 0)
             GetComponent<SpriteRenderer>().flipX = false;
     }
+
+    public void Damage(float damage)
+    {
+        HP -= damage;
+        if (HP >= 0)
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().GameOver();
+    }
+    public float GetHP(){return HP;}
 }
