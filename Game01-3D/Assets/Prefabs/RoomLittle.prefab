@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7537754835796489124}
   - component: {fileID: 1603170523451743799}
   - component: {fileID: 5058974678677320125}
+  - component: {fileID: 4619559044922211951}
   m_Layer: 0
-  m_Name: Room 1
+  m_Name: RoomLittle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4619559044922211951
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8875306112697354623}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 781366a0680514386a12dbbfb39240fe, type: 3}
